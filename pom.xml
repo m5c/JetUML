@@ -1,0 +1,111 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.jetuml</groupId>
+    <artifactId>jetuml</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0</version>
+    <name>JetUML</name>
+    <url>https://github.com/prmr/JetUML</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.release>21</maven.compiler.release>
+    </properties>
+
+    <!-- legal -->
+    <licenses>
+        <license>
+            <name>GPL-3</name>
+            <url>https://github.com/prmr/JetUML/blob/master/LICENSEE</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <!-- no dependencies to java libraries so far-->
+    <dependencies>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>19</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>19</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-swing -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-swing</artifactId>
+            <version>25-ea+24</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>6.0.0-M2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <!-- Override default name of generated jars -->
+        <finalName>JetUML</finalName>
+
+
+        <plugins>
+
+
+            <!-- specify launcher class for javafx goal -->
+            <!-- <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.8</version>
+                <configuration>
+                    <mainClass>eu.kartoffelquadrat.javafxhelloworld.Launcher</mainClass>
+                </configuration>
+            </plugin>-->
+
+            <!--specify main class for JAR manifest-->
+            <!--Uses shade plugin, see here: https://stackoverflow.com/a/57691362-->
+            <!--<plugin>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.4.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <transformers>
+                                <transformer
+                                        implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>eu.kartoffelquadrat.javafxhelloworld.SuperLauncher
+                                    </mainClass>
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin> -->
+
+
+            <!-- specify launcher class for javafx goal (run without building a JAR, with command "mvn clean compile javafx:run")-->
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.8</version>
+                <configuration>
+                    <mainClass>org.jetuml.JetUML</mainClass>
+                </configuration>
+            </plugin>
+
+        </plugins>
+
+    </build>
+</project>
