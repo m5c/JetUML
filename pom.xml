@@ -67,11 +67,30 @@
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>${javafx.maven.plugin.version}</version>
-                <configuration>
-                    <!-- this notation looks weird, but is correct. The plugin wants the class location prefixed by
-                     the module name, as defined in module-info.java, followed by "/"-->
-                    <mainClass>jetuml/org.jetuml.JetUML</mainClass>
-                </configuration>
+<!--                <configuration>-->
+<!--                    &lt;!&ndash; this notation looks weird, but is correct. The plugin wants the class location prefixed by-->
+<!--                     the module name, as defined in module-info.java, followed by "/"&ndash;&gt;-->
+<!--                    <mainClass>jetuml/org.jetuml.JetUML</mainClass>-->
+<!--                </configuration>-->
+                <executions>
+                    <execution>
+                        <id>run</id>
+                        <configuration>
+                            <mainClass>jetuml/org.jetuml.JetUML</mainClass>
+                        </configuration>
+                    </execution>
+<!--                    To debug the application, add a remote debugger to port 8000 and start this application with: "mvn clean javafx:run@debug"-->
+<!--                    See: https://stackoverflow.com/a/61341407/13805480-->
+                    <execution>
+                        <id>debug</id>
+                        <configuration>
+                            <mainClass>jetuml/org.jetuml.JetUML</mainClass>
+                            <options>
+                                <option>-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=*:8000</option>
+                            </options>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
 

@@ -74,7 +74,7 @@ public final class JetUML extends Application
 		setStageBoundaries(pStage);
 
 		pStage.setTitle(RESOURCES.getString("application.name"));
-		pStage.getIcons().add(new Image(RESOURCES.getString("application.icon")));
+		pStage.getIcons().add(new Image(getClass().getResource(RESOURCES.getString("application.icon")).toExternalForm()));
 
 		Optional<Diagram> diagramToOpen = Optional.empty();
 		Optional<File> fileToOpen = getFileToOpenIfPresent();

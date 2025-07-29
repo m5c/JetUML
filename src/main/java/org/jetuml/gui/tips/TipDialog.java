@@ -103,7 +103,7 @@ public class TipDialog
 	private void prepareStage() 
 	{
 		aStage.setTitle(RESOURCES.getString("dialog.tips.title"));
-		aStage.getIcons().add(new Image(RESOURCES.getString("application.icon")));
+		aStage.getIcons().add(new Image(getClass().getResource(RESOURCES.getString("application.icon")).toExternalForm()));
 		aStage.getScene().setRoot(createRoot());
 		aTipDisplay.requestFocus();
 	}
