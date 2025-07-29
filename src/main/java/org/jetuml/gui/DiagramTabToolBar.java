@@ -123,7 +123,7 @@ public class DiagramTabToolBar extends ToolBar implements BooleanPreferenceChang
 	private void installCopyToClipboard()
 	{
 		final Button button = new Button();
-		button.setGraphic(new ImageView(RESOURCES.getString("toolbar.toclipboard.icon")));
+		button.setGraphic(new ImageView(getClass().getResource(RESOURCES.getString("toolbar.toclipboard.icon")).toExternalForm()));
 		button.setTooltip( new Tooltip(RESOURCES.getString("toolbar.toclipboard.tooltip")));
 		button.setOnAction(pEvent-> 
 		{
