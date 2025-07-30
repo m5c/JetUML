@@ -16,6 +16,18 @@ A lightweight desktop application for interactively creating and editing diagram
 > I do a fair bit of modeling with some commercial tools which can be quite heavyweight. Whenever I need to quickly sketch out a design before writing code I prefer JetUML in most cases.
   — Randall Hudson, Mitre Corporation
 
+> JetUML is the perfect companion for swift and clutter-free classroom illustrations. An essential tool for educators in Software Engineering.  
+  — Maximilian Schiedermeier, Professor at Université de Québec à Montréal
+
+## Building with Maven (work in progress)
+
+* Run: `mvn clean javafx:run@run`
+* (Debugging: `mvn clean javafx:run@debug`, then [add a remote debugger on port 8000](https://www.jetbrains.com/help/idea/tutorial-remote-debug.html#create-run-configurations))
+* Building (self-contained JAR): `mvn clean package`
+  * Then `java -jar target/JetUML.jar`
+* Building (MacOS standalone App): `mvn clean package`
+  * Then copy App to Applications directory
+
 ## Download
 
 JetUML is available both as a self-contained application and as a Java archive file under the terms of the [GNU General Public License v3](https://www.gnu.org/licenses/gpl.html). Download the application from the [latest release](https://github.com/prmr/JetUML/releases) page and if necessary see the [installation guide](docs/install.md). Please consider supporting the project by starring this repo and by [writing an endorsement](mailto:jetuml@cs.mcgill.ca).
