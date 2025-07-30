@@ -115,6 +115,7 @@
                 </executions>
             </plugin>
 
+            <!-- IF NOT ON MACOS, YOU MAY NEED TO REMOVE THIS PLUGIN. ONLY TESTED IT ON MAC.-->
             <!-- Builds a native app based on the hosts OS at package phase: https://github.com/javapackager/JavaPackager-->
             <plugin>
                 <groupId>io.github.fvarrui</groupId>
